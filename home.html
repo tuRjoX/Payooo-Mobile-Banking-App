@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payooo</title>
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#f4f5f7] h-[100vh]">
+    <!--All Features-->
+    <div class="max-w-lg mx-auto bg-white rounded-b-xl">
+      <div
+        class="min-h-[50px] flex justify-between items-center border-b-1 border-[#0808081a] p-3"
+      >
+        <div class="flex">
+          <img src="./assets/Group.png" class="h-[50px]" alt="" />
+          <div class="ml-3">
+            <h2 class="font-bold">$<span id="available-balance">45000</span></h2>
+            <p class="text-[#08080880]">Available Balance</p>
+          </div>
+        </div>
+        <div>
+          <button class="text-[#08080880] btn" id="logout-button">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"
+            ></i>
+            Log Out
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-8 p-3">
+        <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#08080880]">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low.
+        </p>
+      </div>
+
+      <div class="min-h-[200px] grid grid-cols-3 gap-4 p-3">
+        <div id="add-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl cursor-pointer form-btn">
+          <img src="./assets/wallet1.png" class="mx-auto" alt="" />
+          <h2>Add Money</h2>
+        </div>
+        <div id="cash-out-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl cursor-pointer form-btn">
+          <img src="./assets/send1.png" class="mx-auto" alt="" />
+          <h2>CashOut</h2>
+        </div>
+        <div id="send-money-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl cursor-pointer form-btn">
+          <img src="./assets/money1.png" class="mx-auto" alt="" />
+          <h2>Transfer Money</h2>
+        </div>
+        <div id="get-bonus-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl cursor-pointer form-btn">
+          <img src="./assets/bonus1.png" class="mx-auto" alt="" />
+          <h2>Get Bonus</h2>
+        </div>
+        <div id="pay-bill-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl cursor-pointer form-btn">
+          <img src="./assets/purse1.png" class="mx-auto" alt="" />
+          <h2>Pay Bill</h2>
+        </div>
+        <div id="transactions-button" class="form-btn border-2 border-gray-300 text-center p-3 rounded-xl cursor-pointer form-btn">
+          <img src="./assets/transaction1.png" class="mx-auto" alt="" />
+          <h2>Transactions</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="all-form-sections max-w-lg mx-auto">
+        <!-- Latest Payments -->
+        <div class="form" id="latest-payments-parent">
+          <div class="flex justify-between items-center">
+            <h1 class="my-5 font-bold">Latest Payments</h1>
+            <p class="text-[#08080880] cursor-pointer">View All</p>
+          </div>
+          <div id="latest-payments-container">
+            <div class="bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+                <div class="flex items-center">
+                  <div class="p-3 rounded-full bg-[#f4f5f7]">
+                    <img src="assets/wallet1.png" class="mx-auto" alt="">
+                  </div>
+                  <div class="ml-3">
+                    <h1>Cash Out</h1>
+                    <p>24/08/2025, 17:25:19</p>
+                  </div>
+                </div>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+          </div>
+        </div>
+        <!-- add money -->
+        <div class="form" id="add-money-parent" style="display: none;">
+            <h1 class="my-5 font-bold">Add Money</h1>
+            <form action="" class="bg-white rounded-2xl p-8">
+                <div class="mb-3">
+                    <h1 class="font-semibold">Select a bank</h1>
+                    <select id="bank" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full" >
+                        <option disabled selected>Select a bank</option>
+                        <option>AB Bank Ltd.</option>
+                        <option>Agrani Bank Ltd.</option>
+                        <option>Al-Arafah Islami Bank Ltd.</option>
+                        <option>Bangladesh Commerce Bank Ltd.</option>
+                        <option>Bangladesh Development Bank Ltd.</option>
+                        <option>Bangladesh Krishi Bank</option>
+                        <option>Bank Asia Ltd.</option>
+                        <option>BRAC Bank Ltd.</option>
+                        <option>City Bank Ltd.</option>
+                        <option>Commercial Bank of Ceylon PLC</option>
+                        <option>Community Bank Bangladesh Ltd.</option>
+                        <option>Dutch-Bangla Bank Ltd.</option>
+                        <option>Eastern Bank Ltd.</option>
+                        <option>EXIM Bank Ltd.</option>
+                        <option>First Security Islami Bank Ltd.</option>
+                        <option>Global Islami Bank Ltd.</option>
+                        <option>HSBC (Hongkong and Shanghai Banking Corporation)</option>
+                        <option>ICB Islamic Bank Ltd.</option>
+                        <option>IFIC Bank Ltd.</option>
+                        <option>Islami Bank Bangladesh Ltd.</option>
+                        <option>Jamuna Bank Ltd.</option>
+                        <option>Meghna Bank Ltd.</option>
+                        <option>Mercantile Bank Ltd.</option>
+                        <option>Midland Bank Ltd.</option>
+                        <option>Modhumoti Bank Ltd.</option>
+                        <option>Mutual Trust Bank Ltd.</option>
+                        <option>National Bank Ltd.</option>
+                        <option>National Bank of Pakistan</option>
+                        <option>NRB Bank Ltd.</option>
+                        <option>NRB Commercial Bank Ltd.</option>
+                        <option>NRB Global Bank Ltd.</option>
+                        <option>One Bank Ltd.</option>
+                        <option>Padma Bank Ltd.</option>
+                        <option>Prime Bank Ltd.</option>
+                        <option>Pubali Bank Ltd.</option>
+                        <option>Rajshahi Krishi Unnayan Bank</option>
+                        <option>Rupali Bank Ltd.</option>
+                        <option>Shahjalal Islami Bank Ltd.</option>
+                        <option>Shimanto Bank Ltd.</option>
+                        <option>Social Islami Bank Ltd.</option>
+                        <option>Sonali Bank Ltd.</option>
+                        <option>Southeast Bank Ltd.</option>
+                        <option>Standard Bank Ltd.</option>
+                        <option>Standard Chartered Bank</option>
+                        <option>State Bank of India</option>
+                        <option>Trust Bank Ltd.</option>
+                        <option>United Commercial Bank Ltd.</option>
+                        <option>Uttara Bank Ltd.</option>
+                        <option>Woori Bank</option>
+                      </select>
+                </div>
+                <div>
+                    <label class="font-semibold" for="">Bank Account Number</label>
+                    <br/>
+                    <input id="account-number" type="text" placeholder="Enter 11 digit account number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Amount to Add</label>
+                    <br/>
+                    <input id="add-amount" type="text" placeholder="Add Amount to withdraw"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Pin Number</label>
+                    <br/>
+                    <input id="add-pin" type="password" placeholder="Enter 4 digit pin number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+
+                <button id="add-money-btn" class="btn text-white bg-[#0874F2]  mt-5 w-full rounded-3xl" >Add Money</button>
+            </form>
+        </div>
+        <!-- cash out -->
+        <div class="form" id="cash-out-parent" style="display: none;">
+          <h1 class="my-5 font-bold">Cash out</h1>
+          <form action="" class="bg-white rounded-2xl p-8">
+            <div>
+                <label class="font-semibold" for="">Agent Number</label>
+                <br/>
+                <input id="cash-out-agent-number" type="text" placeholder="Enter 11 digit number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+            </div>
+            <div class="mt-3">
+                <label class="font-semibold" for="">Amount</label>
+                <br/>
+                <input id="cash-out-amount" type="text" placeholder="Enter Amount to Withdraw"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+            </div>
+            <div class="mt-3">
+                <label class="font-semibold" for="">Pin Number</label>
+                <br/>
+                <input id="cash-out-pin" type="password" placeholder="Enter 4 digit pin number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+            </div>
+
+            <button id="cash-out-btn" class="btn text-white bg-[#0874F2]  mt-5 w-full rounded-3xl" >Withdraw Money</button>
+        </form>
+        </div>
+        <!-- transfer money -->
+        <div class="form" id="send-money-parent" style="display: none;">
+            <h1 class="my-5 font-bold">Transfer Money</h1>
+            <form action="" class="bg-white rounded-2xl p-8">
+                <div>
+                    <label class="font-semibold" for="">User Account Number</label>
+                    <br/>
+                    <input id="user-account-number" type="text" placeholder="Enter 11 digit number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Amount</label>
+                    <br/>
+                    <input id="transfer-amount" type="text" placeholder="Enter amount to  transfer"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Pin Number</label>
+                    <br/>
+                    <input id="transfer-pin" type="password" placeholder="Enter 4 digit pin number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+
+                <button id="send-money-btn" class="btn text-white bg-[#0874F2]  mt-5 w-full rounded-3xl" >Send Now</button>
+            </form>
+        </div>
+        <!-- get bonus -->
+        <div class="form" id="get-bonus-parent" style="display: none;">
+            <h1 class="my-5 font-bold">Get Bonus</h1>
+            <form action="" class="bg-white rounded-2xl p-8">
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Enter Bonus Coupon</label>
+                    <br/>
+                    <input id="bonus-coupon" type="text" placeholder="Enter your coupon"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+
+                <button id="get-bonus-btn" class="btn text-white bg-[#0874F2]  mt-5 w-full rounded-3xl" >Get Bonus</button>
+            </form>
+        </div>
+        <!-- pay bill -->
+        <div class="form" id="pay-bill-parent" style="display: none;">
+            <h1 class="my-5 font-bold">Pay Bill</h1>
+            <form action="" class="bg-white rounded-2xl p-8">
+                <div class="mb-3">
+                    <h1 class="font-semibold">Select to Pay</h1>
+                    <select id="services" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full cursor-pointer" >
+                          <option disabled selected>Select to Pay</option>
+                          <!-- Utilities -->
+                          <optgroup label="🔌 Utilities">
+                            <option>Electricity Bill (DESCO)</option>
+                            <option>Electricity Bill (DPDC)</option>
+                            <option>Electricity Bill (BPDB)</option>
+                            <option>Electricity Bill (BREB / Palli Bidyut)</option>
+                            <option>Electricity Bill (West Zone Power)</option>
+                            <option>Gas Bill (Titas Gas)</option>
+                            <option>Gas Bill (Bakhrabad Gas)</option>
+                            <option>Gas Bill (Jalalabad Gas)</option>
+                            <option>Water Bill (WASA)</option>
+                          </optgroup>
+
+                          <!-- Telecom & Mobile -->
+                          <optgroup label="📱 Mobile Operators">
+                            <option>Grameenphone</option>
+                            <option>Robi</option>
+                            <option>Airtel</option>
+                            <option>Banglalink</option>
+                            <option>Teletalk</option>
+                          </optgroup>
+
+                          <!-- Internet & TV -->
+                          <optgroup label="🌐 Internet & TV">
+                            <option>ISP Bill (Link3)</option>
+                            <option>ISP Bill (Amber IT)</option>
+                            <option>ISP Bill (Carnival)</option>
+                            <option>ISP Bill (MetroNet)</option>
+                            <option>Cable TV / DTH (Akash DTH)</option>
+                          </optgroup>
+
+                          <!-- Education -->
+                          <optgroup label="🎓 Education">
+                            <option>School Fees</option>
+                            <option>College Fees</option>
+                            <option>University Tuition Fees</option>
+                            <option>Coaching Center Fees</option>
+                            <option>Exam Fees (BPSC, NTRCA, University Admission)</option>
+                          </optgroup>
+
+                          <!-- Government & Municipal -->
+                          <optgroup label="🏛 Government Services">
+                            <option>Tax Payment (NBR)</option>
+                            <option>Passport Fees</option>
+                            <option>Visa Fees</option>
+                            <option>Police Clearance Fees</option>
+                            <option>Municipality / City Corporation Tax</option>
+                            <option>Land Tax / Holding Tax</option>
+                          </optgroup>
+
+                          <!-- Financial Services -->
+                          <optgroup label="💳 Financial Services">
+                            <option>Credit Card Bill</option>
+                            <option>Loan Installment</option>
+                            <option>Insurance Premium</option>
+                            <option>Microfinance Loan (BRAC, Grameen, ASA)</option>
+                          </optgroup>
+
+                          <!-- Others -->
+                          <optgroup label="⚙️ Others">
+                            <option>Hospital / Medical Bills</option>
+                            <option>Charity / Donation</option>
+                            <option>Club / Membership Fees</option>
+                            <option>Event / Ticket Payments</option>
+                            <option>Shopping Mall Bills</option>
+                          </optgroup>
+                      </select>
+                </div>
+                <div>
+                    <label class="font-semibold" for="">Biller Account Number</label>
+                    <br/>
+                    <input id="biller-account-number" type="text" placeholder="Enter account number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Amount to Pay</label>
+                    <br/>
+                    <input id="pay-bill-amount" type="text" placeholder="Add Amount to pay"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold" for="">Pin Number</label>
+                    <br/>
+                    <input id="pay-bill-pin" type="password" placeholder="Enter 4 digit pin number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
+                </div>
+
+                <button id="pay-now-btn" class="btn text-white bg-[#0874F2]  mt-5 w-full rounded-3xl" >Pay Now</button>
+            </form>
+        </div>
+        <!-- transactions -->
+        <div class="form" id="transactions-parent" style="display: none;">
+          <div class="flex justify-between items-center">
+            <h1 class="my-5 font-bold">Transactions</h1>
+            <p class="text-[#08080880] cursor-pointer">View All</p>
+          </div>
+          <div id="transactions-container">
+              
+          </div>
+        </div>
+    </div>
+    <script src="./home.js"></script>
+  </body>
+</html>
